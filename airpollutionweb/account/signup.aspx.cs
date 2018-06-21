@@ -13,7 +13,10 @@ namespace airpollutionweb.account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Equals(Session["Login"], "OK") == true)
+            {
+                Response.Write("<script>alert('請先登出再進行註冊!!!');location.href='../main.aspx'</script>");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

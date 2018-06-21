@@ -14,10 +14,10 @@
     <header>
         <ul>
             <li><a href="../main.aspx">首頁</a></li>
-            <li><a href="#">空汙介紹</a></li>
-            <li><a href="#">空汙數據</a></li>
-            <li><a href="#">空汙排行</a></li>
-            <li><a href="#">討論區</a></li>
+            <li><a href="../airpollution/airpollutionIntroduction.aspx">空汙介紹</a></li>
+            <li><a href="../airpollution/airpollutionData.aspx">空汙數據</a></li>
+            <li><a href="../airpollution/airpollutionQuestionnaire.aspx">空汙報表</a></li>
+            <li><a href="../airpollution/airpollutionDiscussion.aspx">討論區</a></li>
             <li><a href="#">登入</a></li>
             <li><a href="../account/signup.aspx">註冊</a></li>
         </ul>

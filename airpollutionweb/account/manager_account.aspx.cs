@@ -11,7 +11,10 @@ namespace airpollutionweb.account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Convert.ToInt32(Session["rank"])!=5)
+            {
+                Response.Write("<script>alert('你不是管理員哦');location.href='../main.aspx'</script>");
+            }
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)

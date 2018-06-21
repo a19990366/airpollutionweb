@@ -21,16 +21,16 @@
                 <asp:Button class="button" ID="Button1" runat="server" Text="首頁" OnClick="Button1_Click" />
             </li>
             <li>
-                <asp:Button class="button" ID="Button2" runat="server" Text="空汙介紹"  OnClick="Button2_Click" OnClientClick="window.alert(&quot;尚未完成，敬請期待!&quot;);" />
+                <asp:Button class="button" ID="Button2" runat="server" Text="空汙介紹"  OnClick="Button2_Click" />
             </li>
             <li>
-                <asp:Button class="button" ID="Button3" runat="server" Text="空汙數據"  OnClick="Button3_Click" OnClientClick="window.alert(&quot;尚未完成，敬請期待!&quot;);" />
+                <asp:Button class="button" ID="Button3" runat="server" Text="空汙數據"  OnClick="Button3_Click" />
             </li>
             <li>
-                <asp:Button class="button" ID="Button4" runat="server" Text="空汙排行"  OnClick="Button4_Click" OnClientClick="window.alert(&quot;尚未完成，敬請期待!&quot;);" />
+                <asp:Button class="button" ID="Button4" runat="server" Text="空汙報表"  OnClick="Button4_Click" />
             </li>
             <li>
-                <asp:Button class="button" ID="Button5" runat="server" Text="討論區"  OnClick="Button5_Click" OnClientClick="window.alert(&quot;尚未完成，敬請期待!&quot;);" />
+                <asp:Button class="button" ID="Button5" runat="server" Text="討論區"  OnClick="Button5_Click" />
             </li>
             <li>
                 <asp:Button class="button" ID="Button6" runat="server" Text="登入"  OnClick="Button6_Click" Visible="False" />

@@ -18,10 +18,12 @@
     <header>
         <ul>
             <li><a href="../main.aspx">首頁</a></li>
-            <li><a href="#">空汙介紹</a></li>
-            <li><a href="#">空汙數據</a></li>
-            <li><a href="#">空汙排行</a></li>
-            <li><a href="#">討論區</a></li>
+            <li><a href="../airpollution/airpollutionIntroduction.aspx">空汙介紹</a></li>
+            <li><a href="../airpollution/airpollutionData.aspx">空汙數據</a></li>
+            <li><a href="../airpollution/airpollutionQuestionnaire.aspx">空汙報表</a></li>
+            <li><a href="../airpollution/airpollutionDiscussion.aspx">討論區</a></li>
+            <li><a href="#">登入</a></li>
+            <li><a href="../account/signup.aspx">註冊</a></li>
         </ul>
     </header>
 </div>
@@ -34,11 +36,11 @@
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="account" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" Height="404px" Width="941px">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:BoundField DataField="account" HeaderText="account" ReadOnly="True" SortExpression="account" />
-                    <asp:BoundField DataField="password" HeaderText="password" SortExpression="password" />
-                    <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                    <asp:BoundField DataField="account" HeaderText="帳號" ReadOnly="True" SortExpression="account" />
+                    <asp:BoundField DataField="password" HeaderText="密碼" SortExpression="password" />
+                    <asp:BoundField DataField="name" HeaderText="姓名" SortExpression="name" />
                     <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                    <asp:TemplateField HeaderText="sex" SortExpression="sex">
+                    <asp:TemplateField HeaderText="性別" SortExpression="sex">
                         <EditItemTemplate>
                             <asp:RadioButtonList ID="RadioButtonList1" runat="server" SelectedValue='<%# Bind("sex") %>'>
                                 <asp:ListItem Value="M">男生</asp:ListItem>
@@ -49,7 +51,7 @@
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("sex") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="rank" HeaderText="rank" SortExpression="rank" />
+                    <asp:BoundField DataField="rank" HeaderText="權限" SortExpression="rank" />
                     <asp:TemplateField HeaderText="操作" ShowHeader="False">
                         <EditItemTemplate>
                             <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="更新"></asp:LinkButton>

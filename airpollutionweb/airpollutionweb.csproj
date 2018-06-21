@@ -66,6 +66,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -143,11 +144,16 @@
     <Content Include="account\login.aspx" />
     <Content Include="account\manager_account.aspx" />
     <Content Include="account\signup.aspx" />
+    <Content Include="airpollution\airpollutionData.aspx" />
+    <Content Include="airpollution\airpollutionDiscussion.aspx" />
+    <Content Include="airpollution\airpollutionIntroduction.aspx" />
+    <Content Include="airpollution\airpollutionQuestionnaire.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\airpollutionIntroduction.css" />
     <Content Include="css\main.css" />
     <Content Include="css\manger_account.css" />
     <Content Include="css\owl.carousel.min.css" />
@@ -227,6 +233,34 @@
     </Compile>
     <Compile Include="account\signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="airpollution\airpollutionData.aspx.cs">
+      <DependentUpon>airpollutionData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="airpollution\airpollutionData.aspx.designer.cs">
+      <DependentUpon>airpollutionData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="airpollution\airpollutionDiscussion.aspx.cs">
+      <DependentUpon>airpollutionDiscussion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="airpollution\airpollutionDiscussion.aspx.designer.cs">
+      <DependentUpon>airpollutionDiscussion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="airpollution\airpollutionIntroduction.aspx.cs">
+      <DependentUpon>airpollutionIntroduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="airpollution\airpollutionIntroduction.aspx.designer.cs">
+      <DependentUpon>airpollutionIntroduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="airpollution\airpollutionQuestionnaire.aspx.cs">
+      <DependentUpon>airpollutionQuestionnaire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="airpollution\airpollutionQuestionnaire.aspx.designer.cs">
+      <DependentUpon>airpollutionQuestionnaire.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

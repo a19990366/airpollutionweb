@@ -13,7 +13,10 @@ namespace airpollutionweb.account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Equals(Session["Login"], "OK") == true)
+            {
+                Response.Write("<script>alert('請勿重複登入!!!');location.href='../main.aspx'</script>");
+            }
         }
 
         protected void Login_Click(object sender, EventArgs e)
