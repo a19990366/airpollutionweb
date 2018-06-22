@@ -145,6 +145,7 @@
     <Content Include="account\manager_account.aspx" />
     <Content Include="account\signup.aspx" />
     <Content Include="airpollution\airpollutionData.aspx" />
+    <Content Include="airpollution\airpollutionDataUpdate.aspx" />
     <Content Include="airpollution\airpollutionDiscussion.aspx" />
     <Content Include="airpollution\airpollutionIntroduction.aspx" />
     <Content Include="airpollution\airpollutionQuestionnaire.aspx" />
@@ -240,6 +241,13 @@
     </Compile>
     <Compile Include="airpollution\airpollutionData.aspx.designer.cs">
       <DependentUpon>airpollutionData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="airpollution\airpollutionDataUpdate.aspx.cs">
+      <DependentUpon>airpollutionDataUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="airpollution\airpollutionDataUpdate.aspx.designer.cs">
+      <DependentUpon>airpollutionDataUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="airpollution\airpollutionDiscussion.aspx.cs">
       <DependentUpon>airpollutionDiscussion.aspx</DependentUpon>

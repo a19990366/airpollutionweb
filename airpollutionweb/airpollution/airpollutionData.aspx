@@ -46,6 +46,12 @@
     </div>
         <div id ="content">
         <h2>空汙數據庫</h2>
+            <p>&nbsp;</p>
+            <p>
+                <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="點此新增一筆資料" Visible="False" />
+            </p>
+            <p>&nbsp;</p>
+            <p>查詢系統</p>
             <br />
             <asp:Label ID="Label1" runat="server" Text="城市:"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="city" DataValueField="city" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
@@ -53,7 +59,7 @@
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Label ID="Label2" runat="server" Text="測站:"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="觀測站:"></asp:Label>
             <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="station" DataValueField="station" Enabled="False">
             </asp:DropDownList>
             <br />
@@ -76,17 +82,17 @@
                         <asp:Button class="btn" ID="btn" runat="server" Text="查詢" OnClick="btn_Click" Height="21px" />
                         <br />
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" Height="399px" Width="638px">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" Height="399px" Width="754px" DataKeyNames="id">
                 <Columns>
-                    <asp:BoundField DataField="date_time" HeaderText="日期" SortExpression="date_time" />
                     <asp:BoundField DataField="city" HeaderText="城市" SortExpression="city" />
-                    <asp:BoundField DataField="station" HeaderText="測站" SortExpression="station" />
+                    <asp:BoundField DataField="date_time" HeaderText="日期" SortExpression="date_time" />
+                    <asp:BoundField DataField="station" HeaderText="觀測站" SortExpression="station" />
                     <asp:BoundField DataField="AQI" HeaderText="AQI" SortExpression="AQI" />
-                    <asp:BoundField DataField="SO2" HeaderText="SO2" SortExpression="SO2" />
-                    <asp:BoundField DataField="CO" HeaderText="CO" SortExpression="CO" />
-                    <asp:BoundField DataField="O3" HeaderText="O3" SortExpression="O3" />
-                    <asp:BoundField DataField="PM2_5" HeaderText="PM2.5" SortExpression="PM2_5" />
-                    <asp:BoundField DataField="NO2" HeaderText="NO2" SortExpression="NO2" />
+                    <asp:BoundField DataField="SO2" HeaderText="SO2(ppb)" SortExpression="SO2" />
+                    <asp:BoundField DataField="CO" HeaderText="CO(ppm)" SortExpression="CO" />
+                    <asp:BoundField DataField="O3" HeaderText="O3(ppb)" SortExpression="O3" />
+                    <asp:BoundField DataField="PM2_5" HeaderText="PM2.5(μg/m3)" SortExpression="PM2_5" />
+                    <asp:BoundField DataField="NO2" HeaderText="NO2(ppb)" SortExpression="NO2" />
                 </Columns>
                 <FooterStyle BackColor="White" ForeColor="#000066" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -98,7 +104,34 @@
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#00547E" />
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT [date_time], [city], [station], [AQI], [SO2], [CO], [O3], [PM2_5], [NO2] FROM [db_APData]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT * FROM [db_APData]" DeleteCommand="DELETE FROM [db_APData] WHERE [id] = @id" InsertCommand="INSERT INTO [db_APData] ([city], [date_time], [station], [AQI], [SO2], [CO], [O3], [PM2_5], [NO2]) VALUES (@city, @date_time, @station, @AQI, @SO2, @CO, @O3, @PM2_5, @NO2)" UpdateCommand="UPDATE [db_APData] SET [city] = @city, [date_time] = @date_time, [station] = @station, [AQI] = @AQI, [SO2] = @SO2, [CO] = @CO, [O3] = @O3, [PM2_5] = @PM2_5, [NO2] = @NO2 WHERE [id] = @id">
+                <DeleteParameters>
+                    <asp:Parameter Name="id" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="city" Type="String" />
+                    <asp:Parameter Name="date_time" Type="String" />
+                    <asp:Parameter Name="station" Type="String" />
+                    <asp:Parameter Name="AQI" Type="Int32" />
+                    <asp:Parameter Name="SO2" Type="Double" />
+                    <asp:Parameter Name="CO" Type="Double" />
+                    <asp:Parameter Name="O3" Type="Int32" />
+                    <asp:Parameter Name="PM2_5" Type="Int32" />
+                    <asp:Parameter Name="NO2" Type="Int32" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="city" Type="String" />
+                    <asp:Parameter Name="date_time" Type="String" />
+                    <asp:Parameter Name="station" Type="String" />
+                    <asp:Parameter Name="AQI" Type="Int32" />
+                    <asp:Parameter Name="SO2" Type="Double" />
+                    <asp:Parameter Name="CO" Type="Double" />
+                    <asp:Parameter Name="O3" Type="Int32" />
+                    <asp:Parameter Name="PM2_5" Type="Int32" />
+                    <asp:Parameter Name="NO2" Type="Int32" />
+                    <asp:Parameter Name="id" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT DISTINCT [city] FROM [db_APData]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT DISTINCT * FROM [db_APData]"></asp:SqlDataSource>
                         <br />
@@ -108,10 +141,6 @@
             <p>請勿轉載或作為商業利益使用</p>
         </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="jquery.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
     </form>
 </body>
 </html>
