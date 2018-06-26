@@ -6,7 +6,7 @@
 <head runat="server">
     <title>空汙</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="../css/airpollutionIntroduction.css"/>
+    <link rel="stylesheet" href="../css/airpollution.css"/>
 </head>
 
 <body>
@@ -47,7 +47,7 @@
         <div id="content">
             <H2>空氣汙染介紹</H2>
             <br />
-            <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" Height="227px" Width="755px" DataKeyNames="aid">
+            <asp:DetailsView ID="DetailsView1" runat="server" CssClass="conter" AllowPaging="True" AutoGenerateRows="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" Height="227px" Width="755px" DataKeyNames="aid">
                 <EditRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
                 <Fields>
                     <asp:BoundField DataField="title" HeaderText="標題" SortExpression="title">

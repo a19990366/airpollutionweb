@@ -153,9 +153,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\airpollutionQuestionnaire.css" />
     <Content Include="css\airpollutionDataUpdate.css" />
+    <Content Include="css\airpollution.css" />
     <Content Include="css\login.css" />
-    <Content Include="css\airpollutionIntroduction.css" />
     <Content Include="css\main.css" />
     <Content Include="css\manger_account.css" />
     <Content Include="css\owl.carousel.min.css" />
