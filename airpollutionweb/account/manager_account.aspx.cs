@@ -13,7 +13,7 @@ namespace airpollutionweb.account
         {
             if (Convert.ToInt32(Session["rank"])!=5)
             {
-                Response.Write("<script>alert('你不是管理員哦');location.href='../main.aspx'</script>");
+                Response.Write("<script>alert('您不是管理員哦!');location.href='../main.aspx'</script>");
             }
         }
 

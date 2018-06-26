@@ -94,6 +94,9 @@ namespace airpollutionweb.airpollution
             string city = DropDownList1.SelectedValue;
             SqlDataSource3.SelectCommand = "SELECT DISTINCT station From db_APData where city like '%" + city + "%'";
             DropDownList2.Enabled = true;
+            DropDownList3.Enabled = true;
+            DropDownList4.Enabled = true;
+            btn.Enabled = true;
         }
 
         protected void Button10_Click(object sender, EventArgs e)

@@ -65,11 +65,11 @@
             <br />
             <br />
             <asp:Label ID="Label4" runat="server" Text="日期:"></asp:Label>
-            <asp:DropDownList ID="DropDownList3" runat="server" style="height: 19px">
+            <asp:DropDownList ID="DropDownList3" runat="server" style="height: 19px" Enabled="False">
                 <asp:ListItem>2018</asp:ListItem>
                 <asp:ListItem>2017</asp:ListItem>
             </asp:DropDownList>
-            年<asp:DropDownList ID="DropDownList4" runat="server">
+            年<asp:DropDownList ID="DropDownList4" runat="server" Enabled="False">
                 <asp:ListItem>6</asp:ListItem>
                 <asp:ListItem>5</asp:ListItem>
                 <asp:ListItem>4</asp:ListItem>
@@ -79,7 +79,7 @@
             </asp:DropDownList>
             月<br />
             <br />
-                        <asp:Button class="btn" ID="btn" runat="server" Text="查詢" OnClick="btn_Click" Height="21px" />
+                        <asp:Button class="btn" ID="btn" runat="server" Text="查詢" OnClick="btn_Click" Height="21px" Enabled="False" />
                         <br />
             <br />
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" Height="399px" Width="754px" DataKeyNames="id">

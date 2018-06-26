@@ -12,68 +12,10 @@ namespace airpollutionweb.airpollution
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Equals(Session["Login"], "OK") == false)
+            if (Convert.ToInt32(Session["rank"]) != 5)
             {
-                Button6.Visible = true;
-                Button7.Visible = true;
+                Response.Write("<script>alert('您沒有權限新增資料!');location.href='../main.aspx'</script>");
             }
-            else if (Equals(Session["Login"], "OK"))
-            {
-                Button8.Visible = true;
-                Button8.Text = Session["name"].ToString() + "(登出)";
-            }
-            if (Convert.ToInt32(Session["rank"]) == 5)
-            {
-                Button9.Visible = true;
-            }
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../main.aspx");
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("airpollutionIntroduction.aspx");
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("airpollutionData.aspx");
-        }
-
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("airpollutionQuestionnaire.aspx");
-        }
-
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("airpollutionDiscussion.aspx");
-        }
-
-        protected void Button6_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../account/login.aspx");
-        }
-
-        protected void Button7_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../account/signup.aspx");
-        }
-
-        protected void Button8_Click(object sender, EventArgs e)
-        {
-            Session["Login"] = "OFF";
-            Session["account"] = null;
-            Session["rank"] = 0;
-            Response.Redirect("../main.aspx");
-        }
-
-        protected void Button9_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../account/manager_account.aspx");
         }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -85,6 +27,7 @@ namespace airpollutionweb.airpollution
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
             TextBox1.Text = Calendar1.SelectedDate.Year.ToString() + "/" + Calendar1.SelectedDate.Month.ToString() + "/" + Calendar1.SelectedDate.Day.ToString();
+            Button10.Enabled = true;
         }
 
         protected void Button10_Click(object sender, EventArgs e)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.WebControls;
 
 namespace airpollutionweb.airpollution
@@ -80,14 +81,29 @@ namespace airpollutionweb.airpollution
             string city = DropDownList1.SelectedValue;
             SqlDataSource3.SelectCommand = "SELECT DISTINCT station From db_APData where city like '%" + city + "%'";
             DropDownList2.Enabled = true;
+            DropDownList3.Enabled = true;
+            DropDownList4.Enabled = true;
+            DropDownList5.Enabled = true;
+            DropDownList6.Enabled = true;
+            Button10.Enabled = true;
         }
 
         protected void Button10_Click(object sender, EventArgs e)
         {
+            if (DropDownList6.SelectedValue == "Column")
+            {
+                Chart1.Series["Series1"].ChartType = SeriesChartType.Column;
+            }
+            else if (DropDownList6.SelectedValue == "Line")
+            {
+                Chart1.Series["Series1"].ChartType = SeriesChartType.Line;
+            }
+            else if (DropDownList6.SelectedValue == "Point")
+            {
+                Chart1.Series["Series1"].ChartType = SeriesChartType.Point;
+            }
             Chart1.Visible = true;
-            Chart2.Visible = true;
             Chart1.Series["Series1"].YValueMembers = DropDownList3.SelectedValue;
-            Chart2.Series["Series1"].YValueMembers = DropDownList3.SelectedValue;
             string city = DropDownList1.SelectedValue;
             string station = DropDownList2.SelectedValue;
             string year = DropDownList4.SelectedValue + "/";

@@ -61,11 +61,11 @@
             <br />
             <br />
             <asp:Label ID="Label4" runat="server" Text="日期:"></asp:Label>
-            <asp:DropDownList ID="DropDownList4" runat="server" style="height: 19px">
+            <asp:DropDownList ID="DropDownList4" runat="server" style="height: 19px" Enabled="False">
                 <asp:ListItem>2018</asp:ListItem>
                 <asp:ListItem>2017</asp:ListItem>
             </asp:DropDownList>
-            年<asp:DropDownList ID="DropDownList5" runat="server">
+            年<asp:DropDownList ID="DropDownList5" runat="server" Enabled="False">
                 <asp:ListItem>6</asp:ListItem>
                 <asp:ListItem>5</asp:ListItem>
                 <asp:ListItem>4</asp:ListItem>
@@ -75,7 +75,8 @@
             </asp:DropDownList>
             月<br />
             <br />
-            Y軸:<asp:DropDownList ID="DropDownList3" runat="server">
+            <asp:Label ID="Label5" runat="server" Text="Y軸:"></asp:Label>
+            <asp:DropDownList ID="DropDownList3" runat="server" Enabled="False">
                 <asp:ListItem>AQI</asp:ListItem>
                 <asp:ListItem>SO2</asp:ListItem>
                 <asp:ListItem>CO</asp:ListItem>
@@ -85,14 +86,21 @@
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="查詢" />
+            <asp:Label ID="Label6" runat="server" Text="種類:"></asp:Label>
+            <asp:DropDownList ID="DropDownList6" runat="server" Enabled="False">
+                <asp:ListItem Value="Column">長條圖</asp:ListItem>
+                <asp:ListItem Value="Line">折線圖</asp:ListItem>
+                <asp:ListItem Value="Point">點陣圖</asp:ListItem>
+            </asp:DropDownList>
             <br />
             <br />
-            <h2>長條圖</h2>
+            <asp:Button ID="Button10" runat="server" OnClick="Button10_Click" Text="查詢" Enabled="False" />
+            <br />
+            <br />
             <p>
-                <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Height="500px" Width="500px" Visible="False">
+                <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource1" Height="500px" Width="500px" Visible="False" IsMapAreaAttributesEncoded="True">
                     <series>
-                        <asp:Series Name="Series1" XValueMember="date_time" YValueMembers="AQI" YValuesPerPoint="4">
+                        <asp:Series Name="Series1" XValueMember="date_time" YValueMembers="AQI" YValuesPerPoint="4" Font="標楷體, 8.25pt">
                         </asp:Series>
                     </series>
                     <chartareas>
@@ -101,18 +109,6 @@
                     </chartareas>
                 </asp:Chart>
                 </p>
-                <br/>
-                <h2>折線圖</h2>
-                <asp:Chart ID="Chart2" runat="server" DataSourceID="SqlDataSource1" Height="500px" Width="500px" Visible="False">
-                    <series>
-                        <asp:Series ChartArea="ChartArea1" ChartType="Line" Name="Series1" XValueMember="date_time" YValueMembers="AQI">
-                        </asp:Series>
-                    </series>
-                    <chartareas>
-                        <asp:ChartArea Name="ChartArea1">
-                        </asp:ChartArea>
-                    </chartareas>
-                </asp:Chart>
             <br />
             <br/>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT * FROM [db_APData]"></asp:SqlDataSource>
