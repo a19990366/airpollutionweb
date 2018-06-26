@@ -6,7 +6,7 @@
 <head runat="server">
     <title>空汙</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="../css/airpollutionIntroduction.css"/>
+    <link rel="stylesheet" href="../css/airpollution.css"/>
 </head>
 
 <body>
@@ -82,7 +82,7 @@
                         <asp:Button class="btn" ID="btn" runat="server" Text="查詢" OnClick="btn_Click" Height="21px" Enabled="False" />
                         <br />
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" Height="399px" Width="754px" DataKeyNames="id">
+            <asp:GridView ID="GridView1" runat="server" CssClass="conter" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource1" Height="399px" Width="754px" DataKeyNames="id">
                 <Columns>
                     <asp:BoundField DataField="city" HeaderText="城市" SortExpression="city" />
                     <asp:BoundField DataField="date_time" HeaderText="日期" SortExpression="date_time" />

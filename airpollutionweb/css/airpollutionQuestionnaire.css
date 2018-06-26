@@ -19,16 +19,16 @@ header {
     background-color: black;
 }
 
-header ul {
-    margin-right: 15em;
-    text-align: right;
-}
+    header ul {
+        margin-right: 15em;
+        text-align: right;
+    }
 
-header li {
-    display: inline-block;
-    list-style: none;
-    font-size: 0.8em;
-}
+    header li {
+        display: inline-block;
+        list-style: none;
+        font-size: 0.8em;
+    }
 
 .button {
     color: #CDCFD3;
@@ -39,9 +39,9 @@ header li {
     padding: 1.25em 1em;
 }
 
-.button:hover{
-    color: white;
-}
+    .button:hover {
+        color: white;
+    }
 
 /* 中間部分 */
 
@@ -52,6 +52,10 @@ div#content {
     padding: 2em 3%;
     text-align: center;
 }
+.conter {
+    text-align: center;
+    margin: 0 auto;
+}
 
 /* 頁尾 */
 footer {
@@ -61,8 +65,8 @@ footer {
     padding: 0.8em;
 }
 
-footer p{
-    font-size: 1.2em;
-    color: white;
-    text-align: center;
-}
+    footer p {
+        font-size: 1.2em;
+        color: white;
+        text-align: center;
+    }

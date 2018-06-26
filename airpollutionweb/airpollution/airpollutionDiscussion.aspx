@@ -6,7 +6,7 @@
 <head runat="server">
     <title>空汙</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="../css/airpollutionIntroduction.css"/>
+    <link rel="stylesheet" href="../css/airpollution.css"/>
     </head>
 
 <body>
@@ -48,7 +48,7 @@
         <h2>討論區</h2>
             <p>&nbsp;</p>
             <p>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="aid" DataSourceID="SqlDataSource1">
+                <asp:GridView ID="GridView1" runat="server" CssClass="conter" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataKeyNames="aid" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:BoundField DataField="title" HeaderText="標題" SortExpression="title" />
                         <asp:BoundField DataField="content" HeaderText="內容" SortExpression="content" />

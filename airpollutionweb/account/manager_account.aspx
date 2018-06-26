@@ -33,7 +33,7 @@
     <div id="form">
         <form id="form1" runat="server">
 
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="account" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" Height="404px" Width="941px">
+            <asp:GridView ID="GridView1" runat="server" CssClass="conter" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="account" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" OnRowCommand="GridView1_RowCommand" Height="404px" Width="941px">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                     <asp:BoundField DataField="account" HeaderText="帳號" ReadOnly="True" SortExpression="account" />

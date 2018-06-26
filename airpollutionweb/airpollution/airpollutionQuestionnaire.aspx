@@ -8,11 +8,11 @@
 <head runat="server">
     <title>空汙</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="../css/airpollutionIntroduction.css"/>
+    <link rel="stylesheet" href="../css/airpollutionQuestionnaire.css"/>
 </head>
 
 <body>
-    <form id="form1" runat="server">
+   <form id="form1" runat="server">
    <div id="wrapper">
     <header>
         <ul>
@@ -46,8 +46,8 @@
         </ul>
     </header>
     </div>
-        <div id="content">
-            <H2>空汙報表</H2>
+       <div id="content">
+            <h2>空汙報表</h2>
             <p>&nbsp;</p>
             <asp:Label ID="Label1" runat="server" Text="城市:"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="city" DataValueField="city" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
@@ -110,10 +110,39 @@
                 </asp:Chart>
                 </p>
             <br />
+            <h2>AQI前十大排行(Day)</h2>
+            <p>&nbsp;</p>
+            <p>(請點擊日期~)</p>
+            <p>&nbsp;</p>
+                        <asp:Calendar ID="Calendar1" cssclass="conter" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True" Width="220px">
+                            <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+                            <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+                            <OtherMonthDayStyle ForeColor="#CC9966"/>
+                            <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+                            <SelectorStyle BackColor="#FFCC66" />
+                            <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+                            <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+                        </asp:Calendar>
+            <br />
+                <asp:Chart ID="Chart2" runat="server" DataSourceID="SqlDataSource4" Height="500px" Width="500px" IsMapAreaAttributesEncoded="True" Visible="False">
+                    <series>
+                        <asp:Series Name="Series1" YValuesPerPoint="4" Font="標楷體, 8.25pt" XValueMember="station" YValueMembers="AQI">
+                        </asp:Series>
+                    </series>
+                    <chartareas>
+                        <asp:ChartArea Name="ChartArea1">
+                            <AxisX IntervalAutoMode="VariableCount" IsLabelAutoFit="False" Maximum="10">
+                                <LabelStyle IsStaggered="True" />
+                            </AxisX>
+                        </asp:ChartArea>
+                    </chartareas>
+                </asp:Chart>
+                <br />
             <br/>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT * FROM [db_APData]"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT DISTINCT [city] FROM [db_APData]"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT DISTINCT * FROM [db_APData]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DB1_05ConnectionString %>" SelectCommand="SELECT * FROM [db_APData] ORDER BY [AQI] DESC"></asp:SqlDataSource>
         </div>
     <footer>
         <div>

@@ -102,7 +102,6 @@ namespace airpollutionweb.airpollution
             {
                 Chart1.Series["Series1"].ChartType = SeriesChartType.Point;
             }
-            Chart1.Visible = true;
             Chart1.Series["Series1"].YValueMembers = DropDownList3.SelectedValue;
             string city = DropDownList1.SelectedValue;
             string station = DropDownList2.SelectedValue;
@@ -110,6 +109,14 @@ namespace airpollutionweb.airpollution
             string month = "/" + DropDownList5.SelectedValue + "/";
             string cmd = SqlDataSource1.SelectCommand;
             SqlDataSource1.SelectCommand = "SELECT  * From db_APData where city like '%" + city + "%' AND station like '%" + station + "%' AND date_time like '%" + year + "%' AND date_time like '%" + month + "%'";
+            Chart1.Visible = true;
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            string time = Calendar1.SelectedDate.Year.ToString() + "/" + Calendar1.SelectedDate.Month.ToString() + "/" + Calendar1.SelectedDate.Day.ToString();
+            SqlDataSource4.SelectCommand = "SELECT  * From db_APData where date_time like '"+ time + "' ORDER BY AQI DESC";
+            Chart2.Visible = true;
         }
     }
 }

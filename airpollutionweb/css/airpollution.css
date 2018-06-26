@@ -1,6 +1,6 @@
 ﻿* {
     box-sizing: border-box;
-    margin: 0 0 0 0px;
+    margin: 0;
 }
 
 body {
@@ -8,6 +8,7 @@ body {
     width: 100%;
     padding: 0;
 }
+/* 這是開頭 */
 
 div#wrapper {
     width: 100%;
@@ -29,20 +30,24 @@ header {
         font-size: 0.8em;
     }
 
-        header li a {
-            display: block;
-            color: #CDCFD3;
-            text-decoration: none;
-            padding: 1.5em 1em;
-            border-radius: 5px;
-        }
-
-a:hover {
-    color: white;
+.button {
+    color: #CDCFD3;
+    border: none;
+    float: right;
+    text-decoration: none;
+    background-color: black;
+    padding: 1.25em 1em;
 }
+
+    .button:hover {
+        color: white;
+    }
+
+/* 中間部分 */
 
 div#content {
     width: 50%;
+    height: 100%;
     margin: 0 auto;
     padding: 2em 3%;
     text-align: center;
@@ -52,3 +57,17 @@ div#content {
     text-align: center;
     margin: 0 auto;
 }
+
+/* 頁尾 */
+footer {
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    padding: 0.8em;
+}
+
+    footer p {
+        font-size: 1.2em;
+        color: white;
+        text-align: center;
+    }
